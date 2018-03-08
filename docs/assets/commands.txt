@@ -1,1 +1,7 @@
 ng build --base-href=/nglanden/
+
+git hub commands:
+git commit -m "To publish online 2"
+git add .
+git push
+ng build -op docs
