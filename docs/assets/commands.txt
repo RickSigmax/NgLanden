@@ -9,3 +9,4 @@ git push
 ng build -op docs   
 git push
 git commit -m "checkin fix1"
+ng build --output-path docs --base-href nglanden
