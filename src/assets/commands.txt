@@ -4,4 +4,8 @@ git hub commands:
 git commit -m "To publish online 2"
 git add .
 git push
-ng build -op docs
+
+
+ng build -op docs   
+git push
+git commit -m "checkin fix1"
