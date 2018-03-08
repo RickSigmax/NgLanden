@@ -1,0 +1,38 @@
+[
+    {
+        "id"    :1,
+        "name"  :"World",
+        "nameNL":"Wereld",
+        "icon"  :"world-128.png"
+    },
+    {
+        "id"    :2,
+        "name"  :"Africa",
+        "nameNL":"Afrika",
+        "icon"  :"africa-128.png"
+    },
+    {
+        "id"    :3,
+        "name"  :"Americas",
+        "nameNL":"Amerika",
+        "icon"  :"america-128.png"
+    },
+    {
+        "id"    :4,
+        "name"  :"Asia",
+        "nameNL":"Azië",
+        "icon"  :"asia-128.png"
+    },
+    {
+        "id"    :5,
+        "name"  :"Europe",
+        "nameNL":"Europa",
+        "icon"  :"europe-128.png"
+    },
+    {
+        "id"    :6,
+        "name"  :"Oceania",
+        "nameNL":"Oceanië",
+        "icon"  :"australia-128.png"
+    }
+]

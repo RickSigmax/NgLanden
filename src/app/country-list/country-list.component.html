@@ -1,0 +1,33 @@
+<button class="btn btn-primary btn-lg" (click)="goBack()">terug</button>
+<br/><br/>
+
+<div class = "panel panel-primary">
+  <div class="panel-heading">
+      <table><tr>
+          <td style="min-width:120px;"> <h3>Landen van:</h3> </td>
+          <td style="width:94%;text-align:center;"> <div *ngIf="region"><h2>{{region.nameNL | uppercase }} </h2></div></td>
+          <td style="min-width:10px;text-align:center;">&nbsp;</td>
+          <td style="width:6%;text-align:center;">&nbsp;</td>
+          <td style="min-width:160px;text-align:right;" >&nbsp; </td>
+      </tr></table>
+  </div>
+  <div class="panel-body">
+    <!-- <div *ngIf="region" style="font-size:large; overflow-y:auto; height:25vh"> -->
+        <div *ngIf="region" [ngClass]="myHeight" >
+      <ul class="list-group" >
+        <li class="list-group-item"  *ngFor='let country of countries' (click)='setSelected(country)'>
+          <!-- <a routerLink="/detail/{{country.name}}">{{country.name}}</a>   -->
+          <table border="0" style="padding-top:0px; margin-top:0px;top:0px;">
+            <tr>
+                <td style="min-width:35px;">&nbsp;<span class="badge badge-dark">{{country.rating}}</span></td>                
+                <td style="width:88%;">&nbsp;{{country.name}}</td>     
+                <td style="min-width:80px; font-weight: bold;">&nbsp;<span *ngIf='country.favorite'>favoriet!</span></td>   
+                <td style="width:12%;">&nbsp;</td>                              
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-country-detail *ngIf='selectedCountry'  [country]='selectedCountry' (rating)="updateRating($event)" ></app-country-detail>

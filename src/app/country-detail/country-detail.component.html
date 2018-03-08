@@ -1,0 +1,49 @@
+  <button class="btn btn-primary btn-lg" *ngIf='showBack' (click)="goBack()">terug</button>
+<br *ngIf='showBack' /><br *ngIf='showBack' /> 
+<div class = "panel panel-primary">
+    <div class="panel-heading">
+        <table border="0"><tr>
+            <td style="min-width:120px;"> <h3>Land&nbsp;details:</h3> </td>
+            <td style="width:94%;text-align:center;"> <div *ngIf="country"><h2> {{country.nameNL | uppercase }} </h2></div></td>
+            <td style="min-width:10px;text-align:center;" > 
+                 <div [hidden]="!isFavorite"><h3>Favoriet!</h3></div>   
+            </td>
+            <td style="width:6%;text-align:center;">&nbsp;</td>
+            <td style="min-width:160px;text-align:right;" >    
+                <div *ngIf="country" >
+                    <button (click)="rate(1)" class="btn btn-lg btn-success">+1</button>&nbsp;
+                    <button (click)="rate(-1)" class="btn btn-lg btn-danger">-1</button>&nbsp;
+                    <button (click)="favorite()" class="btn btn-lg btn-default">favorite</button>
+                </div>
+            </td>
+        </tr></table>
+    </div>
+    <div class="panel-body">        
+        <div *ngIf="country"> 
+            <table border="0" style="width:100%;"> 
+                <tr>
+                    <td style="width:60%;min-width:300px;">
+                         <table class="table table-bordered" style="font-size: large;font-weight:bold">
+                            <tr><td style="width:170px;">Land:</td><td>{{country.name}}</td></tr>
+                            <tr><td>Hoofdstad:</td><td>{{country.capital}}</td></tr>
+                            <tr><td>Aantal inwoners:</td><td>{{country.population}}</td></tr>
+                            <tr><td>Tijd ({{country.timeZone}}):</td><td> {{time | date:'HH:mm:ss'}}</td></tr>
+                            <!--<tr><td>fulljson:</td><td><div [innerHTML]="country.rawJson | json"></div></td></tr> -->
+                        </table> 
+                    </td>
+                    <td style="width:10%">&nbsp;</td>
+                    <td style="width:30%;min-width:120px;max-width:220px; text-align:right;vertical-align:top;">
+                        <div style="border:1px solid black;"><img src='{{country.flag}}' width="100%" /></div> 
+                    </td>       
+                </tr>
+            </table>     
+        </div>
+    </div> 
+    <div class="panel-body">
+        <div style="border: 1px solid gray;"> 
+            <agm-map [zoom]="3" [latitude]="country.lat" [longitude]="country.lng" *ngIf='country'>
+                <agm-marker [latitude]="country.lat" [longitude]="country.lng"> </agm-marker>
+            </agm-map>
+        </div>  
+    </div>
+</div>

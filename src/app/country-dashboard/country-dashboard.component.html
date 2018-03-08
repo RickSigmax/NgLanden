@@ -1,0 +1,67 @@
+
+<div class = "panel panel-primary">
+  <div class="panel-heading">
+      <table>
+          <tr>
+              <td><h3>Landen zoeker:</h3></td>
+          </tr>
+        </table>
+  </div>
+  <div class="panel-body">
+      <app-country-search></app-country-search> 
+  </div> 
+</div>
+<div class = "panel panel-primary">
+    <div class="panel-heading">
+    <table>
+        <tr>
+            <td> <h3>Werelddeel kiezer:</h3> </td>
+        </tr>
+    </table>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+<div class="container" >
+    <div class="row" >
+        <div class="col-md-4" *ngFor="let region of regions | slice:0:3">
+          <div class="square-service-block">
+              <a routerLink="/list/{{region.id}}">
+                <div class="ssb-icon">
+                  <img src="../assets/img/{{region.icon}}" width="60%">
+                </div>
+                <h2 class="ssb-title">{{region.nameNL}}</h2>  
+              </a>
+          </div>
+      </div>  
+    </div>
+    <div class="row">  
+      <div class="col-md-4" *ngFor="let region of regions | slice:3">
+          <div class="square-service-block">
+              <a routerLink="/list/{{region.id}}">
+                <div class="ssb-icon"><img src="../assets/img/{{region.icon}}" width="60%"></div>
+                <h2 class="ssb-title">{{region.nameNL}}</h2>  
+              </a>
+          </div>
+        </div>
+      </div>      
+  </div>
+</div> 
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+<div *ngIf='favorites.length > 0' class = "panel panel-primary">
+  <div class="panel-heading">
+      <table><tr>
+          <td> <h3>Favoriete landen:</h3> </td>
+          <!-- <td> <div style="width:30px"> &nbsp;</div></td>
+          <td> <div *ngIf="country"><h2>{{country.name | uppercase }} </h2></div></td> -->
+      </tr></table>
+  </div>
+  <div class="panel-body">
+      <ul>
+        <li *ngFor='let fav of favorites'>{{fav}}</li>
+      </ul>
+  </div> 
+</div>
+
+
+
+
+

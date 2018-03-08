@@ -1,0 +1,23 @@
+.rick-input{
+    width: 420px; 
+    font-size: x-large;
+}
+.rick-block{
+    padding-left:10px;
+    width: 420px;
+    font-size: x-large;
+    font-style: bold;
+    background-color: rgb(234, 236, 239);  
+    /* background-color: rgb(105, 169, 241)  */
+}
+.rick-block:hover{
+    background-color:rgb(221, 78, 65); 
+}
+
+a{
+    color: rgb(10, 10, 10);
+}
+
+a:hover{
+    color: white;
+}

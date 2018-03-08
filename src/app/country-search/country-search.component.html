@@ -1,0 +1,61 @@
+<div id="search-component" style="text-align: center; display:inline-block;" >
+    <div style="display:inline-block">
+    <table border="0">
+    <tr>
+      <td style="width:40%">&nbsp;</td>
+      <td style="min-width:60px"><h3>Zoek:</h3></td>
+       <td style="min-width:100px"><input class="rick-input" #searchBox id="search-box" (keyup)="search(searchBox.value)" width="80%" /></td>
+      <td style="width:60%">&nbsp;</td> 
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>
+          <div class="rick-block" *ngFor="let country of countries$ | async | slice:0:5">
+             <a routerLink="/detail/{{country.name}}">
+                <div style="text-align: left;"> 
+                  {{country.name}}   {{country.nameNL}}         
+  
+                </div>         
+             </a>          
+          </div>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    </table>
+  </div>
+  </div>      
+
+
+<!-- <div id="search-component" style="text-align: center; display:inline-block; width:100vh" >
+  <div style="display:inline-block">
+  <table border="1">
+  <tr>
+    <td><h3>Zoek:</h3> </td>
+    <td><span>&nbsp;&nbsp;&nbsp;</span></td>
+    <td><input class="rick-input" #searchBox id="search-box" (keyup)="search(searchBox.value)" width="100%" /></td>
+  </tr>
+  <tr>
+    <td><span>&nbsp;&nbsp;&nbsp;</span></td>
+    <td><span>&nbsp;&nbsp;&nbsp;</span></td>
+    <td>
+        <div class="rick-block" *ngFor="let country of countries$ | async | slice:0:5">
+           <a routerLink="/detail/{{country.name}}">
+              <div style="text-align: left;"> 
+                {{country.name}}   {{country.nameNL}}         
+
+              </div>         
+           </a>          
+        </div>
+    </td>
+  </tr>
+  </table>
+</div>
+</div>       -->
+  <!-- <div *ngIf="countries$?.length < 20">
+    <p>hallo</p>
+  </div> -->
+  <!-- <ul class="search-result"> -->
+
+
+ 
