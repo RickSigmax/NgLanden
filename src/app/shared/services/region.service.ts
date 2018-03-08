@@ -19,13 +19,13 @@ export class RegionService {
 
 	// retourneer alle regions
 	getRegions(): Observable<Region[]> {
-		return this.http.get<Region[]>('../assets/data/regions.json');
+		return this.http.get<Region[]>('assets/data/regions.json');
     }
     
    // retourneer alle regions
 	getRegion(id : number): Observable<Region> {
-		return this.http.get<Region[]>('../assets/data/regions.json').map(rs => { return rs.find(r=>r.id === id)});
-		// return this.http.get<Region[]>('../assets/data/regions.json').map((regions: Region[]) => {
+		return this.http.get<Region[]>('assets/data/regions.json').map(rs => { return rs.find(r=>r.id === id)});
+		// return this.http.get<Region[]>('assets/data/regions.json').map((regions: Region[]) => {
 		// 	return regions.find(r=>r.name === 'World')});
     }
 }
